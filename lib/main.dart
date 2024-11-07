@@ -113,7 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
               
             ),
-            const Text(overflow: TextOverflow.ellipsis, "this is a new app!")
+            const Text(overflow: TextOverflow.ellipsis, "capybara é meu novo app!"),
+            meuWidget(["isso é uma lista de elementos!", "eu saquei como faz!"]),
           ],
           
         ),
@@ -126,4 +127,17 @@ class _MyHomePageState extends State<MyHomePage> {
       
     );
   }
+  Text easyText(String string) {
+    return Text(overflow: TextOverflow.ellipsis, string);
+  }
+  Widget meuWidget(List<String> strings) {
+    //Text someText = const Text(overflow: TextOverflow.ellipsis, "oiiii!");
+    List<Widget> list = [];
+    for (var element in strings) {
+      list.add(Text(overflow: TextOverflow.ellipsis, element));
+    }
+
+    return Column(children: list);
+  }
 }
+
