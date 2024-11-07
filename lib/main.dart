@@ -114,7 +114,25 @@ class _MyHomePageState extends State<MyHomePage> {
               
             ),
             const Text(overflow: TextOverflow.ellipsis, "capybara é meu novo app!"),
-            meuWidget(["isso é uma lista de elementos!", "eu saquei como faz!"]),
+            meuWidget([
+              "igor", 
+              "Sara",
+              "Portas",
+              "Passos"
+            ]),
+            ListView(
+              shrinkWrap: true,
+              children: const [
+                Card(
+                  child: ListTile(
+                    leading: FlutterLogo(size: 56.0),
+                    title: Text("Igor"),
+                    subtitle: Text("sada asd sad asd sadsa"),
+                    trailing: Text('aaaaaaa aaaa')
+                  ),
+                ),
+              ],
+            )
           ],
           
         ),
