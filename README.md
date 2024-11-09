@@ -1,16 +1,11 @@
-# capybara
+# Capybara PRM
 
-A new Flutter project.
+![](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
-## Getting Started
+This is an app focused on help you manage the basics of the people you know: their birthdays and whatever information you find useful to remember about them in the future.
 
-This project is a starting point for a Flutter application.
+## Why capybara?
 
-A few resources to get you started if this is your first Flutter project:
+Capybaras [get friendly with many animals](https://a-z-animals.com/blog/capybaras-with-other-animals-do-they-really-get-along-with-everyone/). I use it here as a symbol of connection.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="capybara-and-monkeys.png" width="300">
