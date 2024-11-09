@@ -1,3 +1,4 @@
+import 'package:capybara/models/contact.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -120,19 +121,24 @@ class _MyHomePageState extends State<MyHomePage> {
               "Portas",
               "Passos"
             ]),
-            ListView(
-              shrinkWrap: true,
-              children: const [
-                Card(
-                  child: ListTile(
-                    leading: FlutterLogo(size: 56.0),
-                    title: Text("Igor"),
-                    subtitle: Text("sada asd sad asd sadsa"),
-                    trailing: Text('aaaaaaa aaaa')
-                  ),
-                ),
-              ],
-            )
+            // ListView(
+            //   shrinkWrap: true,
+            //   children: const [
+            //     Card(
+            //       child: ListTile(
+            //         leading: FlutterLogo(size: 56.0),
+            //         title: Text("Igor"),
+            //         subtitle: Text("sada asd sad asd sadsa"),
+            //         trailing: Text('aaaaaaa aaaa')
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            contactList([
+              Contact("gabs", "allergic to peanuts", 10, 30),
+              Contact("mimi", "does not drink cola", 07, 24),
+              Contact("bru", "doesnt like flowers", 02, 13)
+            ])
           ],
           
         ),
@@ -145,9 +151,11 @@ class _MyHomePageState extends State<MyHomePage> {
       
     );
   }
+
   Text easyText(String string) {
     return Text(overflow: TextOverflow.ellipsis, string);
   }
+
   Widget meuWidget(List<String> strings) {
     //Text someText = const Text(overflow: TextOverflow.ellipsis, "oiiii!");
     List<Widget> list = [];
@@ -156,6 +164,26 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     return Column(children: list);
+  }
+
+  Widget contactList(List<Contact> contacts) {
+    List<Widget> list = [];
+    for (var contact in contacts) {
+      list.add(contactWidget(contact));
+    }
+
+    return Column(children: list);
+  }
+
+  Widget contactWidget(Contact contact) {
+    return Card(
+      child: ListTile(
+        leading: FlutterLogo(size: 56.0),
+        title: Text(contact.name),
+        subtitle: Text(contact.description),
+        trailing: Text("${contact.birthDay.toString()}/${contact.birthMonth.toString()}"),
+      )
+    );
   }
 }
 
