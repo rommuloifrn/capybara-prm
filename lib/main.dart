@@ -56,7 +56,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -65,7 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
     });
   }
 
@@ -106,21 +104,6 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-              
-            ),
-            const Text(overflow: TextOverflow.ellipsis, "capybara é meu novo app!"),
-            meuWidget([
-              "igor", 
-              "Sara",
-              "Portas",
-              "Passos"
-            ]),
             // ListView(
             //   shrinkWrap: true,
             //   children: const [
@@ -134,11 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
             //     ),
             //   ],
             // ),
+            FilledButton(onPressed: ()=>{}, child: const Text("Add contact")),
             contactList([
               Contact("gabs", "allergic to peanuts", 10, 30),
               Contact("mimi", "does not drink cola", 07, 24),
               Contact("bru", "doesnt like flowers", 02, 13)
-            ])
+            ]),
           ],
           
         ),
@@ -178,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget contactWidget(Contact contact) {
     return Card(
       child: ListTile(
-        leading: FlutterLogo(size: 56.0),
+        leading: const FlutterLogo(size: 56.0),
         title: Text(contact.name),
         subtitle: Text(contact.description),
         trailing: Text("${contact.birthDay.toString()}/${contact.birthMonth.toString()}"),
