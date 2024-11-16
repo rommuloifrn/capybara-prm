@@ -1,3 +1,4 @@
+import 'package:capybara/add_contact.dart';
 import 'package:capybara/models/contact.dart';
 import 'package:flutter/material.dart';
 
@@ -117,7 +118,16 @@ class _MyHomePageState extends State<MyHomePage> {
             //     ),
             //   ],
             // ),
-            FilledButton(onPressed: ()=>{}, child: const Text("Add contact")),
+            FilledButton(
+              onPressed: ()=>{
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context)=> const AddContact()
+                  )
+                )
+              }, 
+              child: const Text("Add contact")
+            ),
             contactList([
               Contact("gabs", "allergic to peanuts", 10, 30),
               Contact("mimi", "does not drink cola", 07, 24),
